@@ -75,6 +75,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
+    'django.middleware.csrf.CsrfResponseMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     #'debug_toolbar.middleware.DebugToolbarMiddleware',
@@ -129,7 +130,7 @@ LANGUAGES = (
     ('fr', gettext('French')),  
     ('es', gettext('Spanish')),  
     ('br', gettext('Brazilian')),
-#    ('de', gettext('German')),
+    ('de', gettext('German')),
 #    ('ru', gettext('Russian')),
 )
 

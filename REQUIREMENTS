@@ -7,7 +7,7 @@
 
 
 
-  Python 2.6 >=
+  Python 2.4 or upper
 
 
 * Add repository on CentOS 5.4 
@@ -56,12 +56,11 @@
 
 
 
-* django-dilla 
-----------------
+* django-dilla - no needed but module need to be commented
+-----------------------------------------------------------------
     
     inside the cdr-stats directory :
-	svn checkout http://django-dilla.googlecode.com/svn/trunk/dilla dilla
-
+	    http://github.com/areski/django-dilla/tarball/master
 
 
 * django-extensions
