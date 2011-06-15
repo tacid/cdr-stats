@@ -25,11 +25,30 @@ Applications
     This application provide Report, CDR View, several CDR reporting, Dashboard.
     User with accountcode can login and see their restrected data
 
+.. image:: https://github.com/Star2Billing/cdr-stats/raw/master/screenshot/cdr-stats-user.png
+
 * Admin UI :
     http://localhost:8000/admin/
     This interface provides user (ACL) management, assignation of accountcode, 
     also basic CRUD functions on the CDR
 
+.. image:: https://github.com/Star2Billing/cdr-stats/raw/master/screenshot/cdr-stats-admin.png
+
+
+Documentation
+-------------
+
+General documentation :
+
+    - https://github.com/Star2Billing/cdr-stats/blob/master/docs/cdr-stats_doc.rst
+
+Models :
+
+    - https://github.com/Star2Billing/cdr-stats/blob/master/docs/cdr_stats_model.png
+
+RestFul API :
+
+    - https://github.com/Star2Billing/cdr-stats/raw/master/docs/api_doc.pdf
 
 
 Coding Conventions
@@ -52,7 +71,7 @@ We are using myGengo to ease the translation :
 Support 
 -------
 
-Star2Billing S.L. offers consultancy including installation, training and customisation 
+Star2Billing S.L. (http://www.star2billing.com) offers consultancy including installation, training and customisation 
 
 Please email us at sales@star2billing.com for more information
     

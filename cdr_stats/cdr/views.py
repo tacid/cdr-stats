@@ -11,7 +11,6 @@ from grid import ExampleGrid
 from datetime import *
 from dateutil import parser
 from dateutil.relativedelta import *
-from sets import *
 from django.db.models.loading import get_model
 from operator import *
 from cdr_stats.helpers import json_encode
@@ -98,13 +97,15 @@ def show_cdr(request):
     if not request.user.is_superuser:
         kwargs[ 'accountcode' ] = request.user.get_profile().accountcode
     
-    queryset = CDR.objects.values('calldate', 'channel', 'src', 'clid', 'dst', 'disposition', 'duration', 'accountcode').filter(**kwargs).order_by('-calldate')
+    queryset = CDR.objects.values('calldate', 'channel', 'src', 'clid', 'dst', 'disposition', 'duration', 'accountcode', 'userfield').filter(**kwargs).order_by('-calldate')
     total_data = CDR.objects.extra(select=select_data).values('calldate').filter(**kwargs).annotate(Count('calldate')).annotate(Sum('duration')).annotate(Avg('duration')).order_by('-calldate')
     form = CdrSearchForm(initial={'from_date':from_date,'to_date':to_date,'result':result,'export_csv_queryset':'0'})
     
     count = 0
     if result == '1':
         for i in queryset:
+            if i['duration'] is None:
+                i['duration'] = 0
             queryset[count]['duration'] = int_convert_to_minute(int(i['duration']))
             count +=1
     
